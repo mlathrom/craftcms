@@ -966,10 +966,9 @@ li.breadcrumb-toggle-wrapper {
     }
   }
 
-  @media only screen and (max-width: $minHorizontalUiWidth - calc(1rem/16)) {
+  @media only screen and (max-width: $minDesktopWidth) {
     flex-direction: row-reverse;
     justify-content: start;
-    margin-top: 10px;
   }
 }
 
@@ -1229,15 +1228,17 @@ li.breadcrumb-toggle-wrapper {
   }
 }
 
+@media screen and (max-width: $minDesktopWidth) {
+  #header {
+    flex-direction: column;
+  }
+}
+
 // Rearrange #main-content to flow vertically at < 999
 @media only screen and (max-width: $minHorizontalUiWidth - calc(1rem/16)) {
   #header {
     display: flex;
     flex-wrap: wrap;
-
-    .flex:not(#toolbar) {
-      margin-top: 10px;
-    }
   }
 
   #toolbar {
@@ -1245,10 +1246,6 @@ li.breadcrumb-toggle-wrapper {
     order: 3;
     width: 100%;
     flex: auto;
-
-    & > * {
-      margin-top: 10px !important;
-    }
   }
 
   #action-buttons {
